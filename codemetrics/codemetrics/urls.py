@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from analyzer.views.code_view import CodeView
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('analyze/', CodeView.as_view(), name='analyze_code'),
 ]
